@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animated Solar System</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      overflow: hidden;
+    }
+
+    .solar-system {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .sun {
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, rgb(255, 225, 0), rgb(255, 0, 0));
+      border-radius: 50%;
+      position: absolute;
+      z-index: 10;
+    }
+
+    .orbit {
+      position: absolute;
+      border: 1px dashed rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+    }
+
+    .planet {
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .mercury {
+      width: 15px;
+      height: 15px;
+      background-color: gray;
+      animation: orbitMercury 4s linear infinite;
+    }
+
+    .venus {
+      width: 20px;
+      height: 20px;
+      background-color: goldenrod;
+      animation: orbitVenus 7s linear infinite;
+    }
+
+    .earth {
+      width: 22px;
+      height: 22px;
+      background-color: blue;
+      animation: orbitEarth 10s linear infinite;
+    }
+
+    .mars {
+      width: 18px;
+      height: 18px;
+      background-color: red;
+      animation: orbitMars 15s linear infinite;
+    }
+
+    @keyframes orbitMercury {
+      from { transform: rotate(0deg) translateX(60px) rotate(0deg); }
+      to { transform: rotate(360deg) translateX(60px) rotate(-360deg); }
+    }
+
+    @keyframes orbitVenus {
+      from { transform: rotate(0deg) translateX(90px) rotate(0deg); }
+      to { transform: rotate(360deg) translateX(90px) rotate(-360deg); }
+    }
+
+    @keyframes orbitEarth {
+      from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+      to { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+    }
+
+    @keyframes orbitMars {
+      from { transform: rotate(0deg) translateX(160px) rotate(0deg); }
+      to { transform: rotate(360deg) translateX(160px) rotate(-360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="solar-system">
+    <div class="sun"></div>
+    <div class="planet mercury"></div>
+    <div class="planet venus"></div>
+    <div class="planet earth"></div>
+    <div class="planet mars"></div>
+  </div>
+</body>
+</html>
